@@ -18,14 +18,14 @@ jobs:
         run: |
           import platform
           print(platform.processor())
-        shell: bash
+          shell: bash
   run-windows-commands:
     runs-on: windows-latest
     needs: ["run-shell-command"]
     steps:
       - name: Directory
-        run: Get-Location
+        run: Get-location
       - name: Directory bash
         run: |
-          Get-Location
+          Get-location
         shell: pwsh
