@@ -17,8 +17,8 @@ jobs:
       - name: python command
         run: |
           import platform
-          #print(platform.processor())
-          shell: python
+          print(platform.processor())
+          shell: bash
   run-windows-commands:
     runs-on: windows-latest
     needs: ["run-shell-command"]
@@ -26,5 +26,6 @@ jobs:
       - name: Directory
         run: Get-location
       - name: Directory bash
-        run: pwd
-        shell: bash
+        run: |
+          Get-location
+        shell: pwsh
